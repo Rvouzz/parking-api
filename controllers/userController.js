@@ -75,7 +75,7 @@ export default class UserController {
 
   static async register(req, res) {
     let { username, password, email } = req.body;
-    password = bcrypt.hashSync(password, 10)
+    password = bcrypt.hashSync(password, 10);
 
     const user = await User.create({ username, password, email });
 
@@ -83,6 +83,4 @@ export default class UserController {
 
     return res.json({ accessToken: token });
   }
-
-
 }
